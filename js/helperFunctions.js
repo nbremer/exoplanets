@@ -113,7 +113,10 @@ function showInfo() {
 
 //Hide the information box
 function closeInfo() {
-	d3.select('#information').style("z-index","-1000").transition().duration(300).style('opacity',0);
+	d3.select('#information').transition().duration(300).style('opacity',0)
+		.call(endall,  function() {
+			d3.select('#information').style("z-index","-1000");	
+		});
 	resetEvents();	
 }//closeInfo
 
