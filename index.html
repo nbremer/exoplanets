@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+	<!-- Google fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+	
+	<link type="text/css" rel="stylesheet" href="css/style.css"/>
+	<link type="text/css" rel="stylesheet" href="css/tooltip.css"/>
+	<link type="text/css" rel="stylesheet" href="css/infoBox.css"/>
+
+  </head>
+  <body>
+
+	<!-- Button to start introduction -->
+	<div id="start" class="bigButton"><span>INTRODUCTION</span></div>
+	
+	<!-- Chart -->
+    <div id="planetarium"></div>
+
+	<!-- Ribbon of buttons at the bottom -->
+	<div id="buttonWrapper">
+			<div class="bar">|</div><div id="info" 		class="sideButton">information</div>
+			<div class="bar">|</div><div id="remove" 	class="sideButton">skip intro</div>
+			<div class="bar">|</div><div id="reset" 	class="sideButton">reset</div>
+			<div class="bar">|</div><div id="scale" 	class="sideButton">scale planets</div>
+			<div class="bar">|</div><div id="link" 		class="sideButton"><a href="http://bl.ocks.org/nbremer/raw/94db779237655907b907/">go to source</a></div>
+			<div class="bar">|</div><div id="color" 	class="sideButtonInv">colorize</div>
+
+	</div>
+
+	
+	<!-- Show how to close tooltip -->
+	<div id="tooltipInfo"><span>Click anywhere in the screen to close tooltips</span></div>
+	<!-- My name :) -->
+	<div id="name">Created by <a href="http://www.visualcinnamon.com">Nadieh Bremer</a></div>	
+	<!-- Easter Egg -->
+	<div id="crazy" class="bigButton"><span>COLORIZE</span></div>	
+	
+	<!-- Information pop-up-->
+	<div id="information">
+		<div id="infoContainer">
+			<div id="infoTitle">Information</div>
+			<div id="infoRule"></div>
+			<div id="infoText">
+				<span>This visualization shows the orbits of 288 exoplanets, taking eccentricity of the orbit
+					  and <a href="http://www.windows2universe.org/the_universe/uts/kepler2.html">Kepler's 2nd law</a> 
+					  into account. The orbits of the planets have been scaled to each other. The star in the center is
+					  scaled to the size of our Sun in comparison to the orbits.<br>
+					  The sizes of the planets are scaled as well, but not to the orbits. Otherwise most planets would
+					  become extremely small (smaller than a pixel)</span>
+				
+				<div id="infoInnerWrapper">
+					<h3>Astronomical Unit (au)</h3>
+					<span>An astronomical unit is a unit of length, roughly the distance from the Earth to the Sun. 
+						  However, that distance varies as the Earth orbits the Sun, from a maximum (aphelion) to 
+						  a minimum (perihelion) and back again once a year. It is now defined as about 150 million km, 
+						  or 93 million miles</span>
+
+					<h3>Eccentricity</h3>
+					<span>Although some objects follow circular orbits, most orbits are shaped more like 
+						  "stretched out" circles: ellipses. An ellipse can be very long and thin, 
+						  or it can be like a circle.<br> 
+						  The eccentricity of an ellipse describes how round or how "stretched out" an ellipse is. 
+						  If the eccentricity is close to one, the ellipse is long and skinny. If the eccentricity 
+						  is close to zero, the ellipse is like a circle.<br>
+						  The eccentricity of Earth's orbit is only 0.02, so Earth's orbit is nearly circular.  
+						  Many comets have extremely eccentric orbits. Halley's Comet has an orbital eccentricity of almost 0.97!<br>
+						  The star is not at the center of an elliptical orbit. It is a little off to one side, 
+						  at a point called a "focus" of the ellipse. Because of this offset the planet moves 
+						  closer to and further away from the Star every orbit. The close point in each orbit is 
+						  called "perihelion". The far away point is called "aphelion". If an orbit has a large 
+						  eccentricity, the difference between the perihelion and aphelion distance 
+						  will be large. Earth is only 3% further from the Sun at aphelion than it is at 
+						  perihelion. Pluto's eccentricity is 0.25 and its aphelion distance from the Sun is 
+						  66% greater than its perihelion distance
+						  <sup><a href="http://www.windows2universe.org/physical_science/physics/mechanics/orbit/eccentricity.html">1</a></sup>.</span>					  
+					
+					<h3>Semi-Major Axis</h3>
+					<span>The semi-major and semi-minor axes of an ellipse are radii of the ellipse. 
+						  The semi-major axis is the longest radius and the semi-minor axis the shortest. 
+						  If they are equal in length then the ellipse is a circle</span>	
+						  
+					<h3>Data</h3>
+					<span>The data was taken from the Orbit database of <a href="http://exoplanets.org">exoplanets.org</a>  
+						  of exoplanets where the Planetary Radius, Semi-Major Axis, Orbital Period, 
+						  Orbital Eccentricity and Effective temperature of the exoplanet's star
+						  are known</span>		  
+				</div>	
+				<div id="infoClose"></div>
+			</div>
+		</div>
+	</div>
+		
+	<!-- Create div structure for Tooltip -->
+	<div id="tooltip">
+		<div id="tooltip-Container">
+			<div class="tooltip-planet"></div>
+			<div class="tooltip-rule"></div>
+			<div class="tooltip-year"></div>
+			<div id="tooltip-radius"	class="tooltip-info"></div>
+			<div id="tooltip-dist" 		class="tooltip-info"></div>
+			<div id="tooltip-period" 	class="tooltip-info"></div>
+			<div id="tooltip-eccen" 	class="tooltip-info"></div>
+			<div id="tooltip-class" 	class="tooltip-info"></div>
+			<div class="tooltip-tail"></div>
+		</div>
+	</div>
+		
+	<!-- Separate functions that became too big for the main script -->
+	<script src="js/helperFunctions.js"></script>	
+	<script src="js/exoplanets.js"></script>	<!-- data -->
+	<script src="js/showTooltip.js"></script>	
+	<script src="js/gradients.js"></script>
+	<script src="js/legend.js"></script>
+	<script src="js/progressCircle.js"></script>	
+	
+    <script src="js/mainCode.js"></script>
+
+
+  </body>
+
+</html>

@@ -1,0 +1,72 @@
+#tooltip-Container {
+  position: absolute;
+  bottom: 0;
+  width: 230px;
+  left: -115px; /* 230/2*/
+  font-size: 12px;
+  line-height: 16px;
+  padding: 10px;
+  border-radius: 3px;
+  background: rgba(255,255,255,0.9);
+  color: #000;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.4);
+  -moz-box-shadow: 0 1px 5px rgba(0,0,0,0.4);  
+  border:1px solid rgba(200,200,200,0.85);
+  text-align:center;
+  cursor: default;
+}
+
+#tooltip {
+  text-align:center;  
+  z-index: 1000;
+  position: absolute;
+  opacity: 0;
+}
+
+#tooltip .tooltip-tail {
+  position: absolute;
+  bottom: -8px;
+  left: 105px;
+  width: 40px;
+  height: 8px;
+  background: url(../img/tail_white.png) 50% 0%;
+}
+
+#tooltip .tooltip-planet {
+  text-transform: uppercase;
+  font-family: 'Oswald', sans-serif;
+  text-align: left;
+  font-size: 16px;
+  margin-bottom: 4px;
+  color:#333333;
+  text-align:center;  
+}
+
+#tooltip .tooltip-rule{
+  height:1px;
+  margin:1px auto 3px;
+  background:#ddd;
+  width:130px;
+}
+
+#tooltip .tooltip-year{
+  color:#666;
+  font-size: 11px;   
+  text-align:center; 
+  margin-bottom: 6px;  
+  font-style:italic;
+}
+#tooltip .tooltip-class {
+  color:#333333;
+  text-align: left;
+  font-size: 13px;
+  text-align:center;  
+  margin-bottom: 4px;
+}
+.tooltip-info {
+  color:#333333;
+  font-size: 12px;  
+  text-align:center;  
+  overflow:hidden;
+  margin-bottom: 2px;
+}

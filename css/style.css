@@ -1,0 +1,153 @@
+body {
+	font-size: 14px;
+	font-weight: 400;
+	font-family: 'Open Sans', sans-serif;
+	text-align: center;
+	vertical-align: middle;
+	background: url(http://33.media.tumblr.com/tumblr_me8fukLt0z1rdwlp0o1_500.jpg);
+	cursor: default;
+}		
+
+.bigButton {
+  font-family: Oswald;
+  font-size: 18px;
+  font-weight: 300;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid;
+  border-color: white;
+  cursor: pointer;	
+  visibility: auto;
+}
+
+#start {
+  top: 200px;
+  left: 18px;
+  height: 33px;
+  width: 112px;
+  position: absolute;
+}
+
+#crazy {
+  position: absolute;
+  top: 300px;
+  left: 200px;
+  height: 33px;
+  width: 112px;
+  visibility: hidden;
+  opacity: 0;
+}
+
+span { 
+	display:inline-block; 
+	vertical-align:middle 
+}
+
+#buttonWrapper{
+  z-index: 1;
+  display: block;
+  font-family: Oswald;
+  font-size: 14px;
+  font-weight: 300;
+  color: white;
+  position: absolute;
+  left: 18px;
+  bottom: 13px;
+  width: 640px;
+  text-align: center;	
+  overflow: hidden;	
+  visibility: auto;			  
+}
+
+.sideButton {
+  float: left;	
+  cursor: pointer;	
+  width: 80px;
+}
+
+.sideButton a {
+	text-decoration: none;
+	color: white;
+}
+
+.sideButtonInv {
+  float: left;	
+  cursor: pointer;	
+  width: 80px;
+  opacity: 0;
+  cursor: pointer;	
+}
+
+.bar {
+	float: left;	
+	width: 15px;
+}
+
+#color {  
+	visibility: hidden;
+}
+
+#tooltipInfo {
+	position: absolute;
+	right: 10px;
+	top: 5px;
+	font-size: 12px;
+	color: white;
+	visibility: hidden;
+}
+
+#name {
+	position: absolute;
+	right: 10px;
+	bottom: 5px;
+	font-size: 10px;
+	color: white;
+}
+#name a {
+	text-decoration: none;
+	color: #CCCCCC;
+}
+	
+.title {
+  font-family: Oswald;
+  font-size: 20px;
+  font-weight: 300;
+  color: white;
+  text-align: left;	
+}
+
+.intro {
+  font-size: 12px;
+  font-weight: 300;
+  color: white;
+  text-align: left;	
+}
+
+.explanation {
+  font-size: 14px;
+  font-weight: 300;
+  color: white;
+  text-align: center;
+  text-anchor: middle;	
+}
+
+.legend {
+  font-size: 11px;
+  font-weight: 300;
+  color: white;
+  fill: white;
+}
+
+.legendTitle {
+  font-family: Oswald;
+  font-size: 14px;
+  font-weight: 300;
+  color: white;
+  fill: white;
+}
+
+.progressWrapper {
+	cursor: pointer;
+	z-index: 1;
+}
