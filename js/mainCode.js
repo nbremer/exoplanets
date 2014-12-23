@@ -504,8 +504,8 @@ function Draw6() {
 d3.select("#crazy")
 	.on("click", function(e) {
 		
-		resetEvents();	
-	
+		setTimeout(function() {resetEvents();}, 3000);
+		
 		//Remove text
 		changeText("", delayDisappear = 0, delayAppear = 1);
 		
