@@ -366,7 +366,7 @@ function Draw2() {
 	//Highlight the biggest planet
 	highlight(235, delayTime=4);
 	changeText("Let's get back to WASP-12 b. The distance to the star it orbits is only 2% of the distance " +
-			   "between the Earth and the Sun.",
+			   "between the Earth and the Sun",
 				delayDisappear = 0, delayAppear = 3);
 
 	changeText("The distance between the Earth and the Sun is 150 million kilometers " +
@@ -496,15 +496,15 @@ function Draw6() {
 		.style("left", (x/2 - 112/2 + 6) + "px")
 		.style("top", (y/2 - 100) + "px")
 		.transition().delay(700 * 35).duration(1000)
-		.style("opacity", 1);
-	
-	setTimeout(function() {resetEvents();}, 700*35);			
+		.style("opacity", 1);		
 				
 }//Draw6
 
 //Switch between different gradient options of Easter Egg
 d3.select("#crazy")
 	.on("click", function(e) {
+		
+		resetEvents();	
 	
 		//Remove text
 		changeText("", delayDisappear = 0, delayAppear = 1);
