@@ -279,6 +279,7 @@ function updateWindow(){
 
 	svg.attr("width", x).attr("height", y);
 	d3.selectAll(".container").attr("transform", "translate(" + x/2 + "," + y/2 + ")");
-	d3.selectAll(".legendContainer").attr("transform", "translate(" + 30 + "," + (y - 90) + ")")
+	d3.selectAll(".legendContainer").attr("transform", "translate(" + 30 + "," + (y - 90) + ")");
+	d3.select("#crazy").style("left", (x/2 - 112/2 + 6) + "px").style("top", (y/2 - 100) + "px");
 	//d3.selectAll(".introWrapper").attr("transform", "translate(" + -x/2 + "," + -y/2 + ")");
 }//updateWindow
