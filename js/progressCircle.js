@@ -6,7 +6,8 @@ function progressCircle(time) {
 //Create a small icon that starts when an animation is going on
 var progressWrapper = container.append("g")
 		.attr("class", "progressWrapper")
-		.attr("transform", "translate(0,-220)");
+		.attr("transform", "translate(0,-220)")
+		.style("pointer-events", "none");
 
 //Circle in the back so the whole thing becomes clickable
 var backCircle =  progressWrapper.append("circle")
@@ -78,6 +79,8 @@ function startCircle(time) {
 				return arc(d);
 		   }//return
 		})
-		.call(endall, function() {d3.select(".progressWrapper").style("pointer-events", "auto");})
-		;
+		.call(endall, function() {
+			d3.select(".progressWrapper")
+				.style("pointer-events", "auto");
+		});
 };
