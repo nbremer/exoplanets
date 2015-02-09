@@ -240,7 +240,7 @@ function dim(delayTime) {
 //Taken from http://bl.ocks.org/mbostock/7555321
 //Wraps SVG text	
 function wrap(text, width) {
-	var text = d3.select(this)[0][0],
+	var text = d3.select(this[0][0]),
 		words = text.text().split(/\s+/).reverse(),
 		word,
 		line = [],
