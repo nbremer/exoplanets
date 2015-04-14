@@ -2,6 +2,11 @@
 /////////////////////////// Other functions ///////////////////////////////
 ///////////////////////////////////////////////////////////////////////////	
 
+window.onerror = function() {
+    location.reload();
+}
+
+
 //Change the text during introduction
 function changeText (newText, delayDisappear, delayAppear, xloc, yloc, finalText) {
 
