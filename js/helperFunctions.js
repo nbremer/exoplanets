@@ -76,7 +76,7 @@ function locate(coord) {
 //Show the total orbit of the hovered over planet
 function showEllipse(d, i, opacity) {
 		var planet = i;
-		console.log(d);
+		//console.log(d);
 		var duration = (opacity == 0) ? 2000 : 100; //If the opacity is zero slowly remove the orbit line
 		
 		//Highlight the chosen planet
