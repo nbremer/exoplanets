@@ -4,8 +4,8 @@ var
 	d = document,
 	e = d.documentElement,
 	g = d.getElementsByTagName('body')[0],
-	x = w.innerWidth || e.clientWidth || g.clientWidth,
-	y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+	x = (w.innerWidth || e.clientWidth || g.clientWidth) - 50,
+	y = (w.innerHeight|| e.clientHeight|| g.clientHeight) - 50;
 
 window.onresize = updateWindow;	
 

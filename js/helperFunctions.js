@@ -279,8 +279,8 @@ function endall(transition, callback) {
 
 //Outline taken from http://stackoverflow.com/questions/16265123/resize-svg-when-window-is-resized-in-d3-js
 function updateWindow(){
-	x = w.innerWidth || e.clientWidth || g.clientWidth;
-	y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+	x = (w.innerWidth || e.clientWidth || g.clientWidth) - 50;
+	y = (w.innerHeight|| e.clientHeight|| g.clientHeight) - 50;
 
 	svg.attr("width", x).attr("height", y);
 	d3.selectAll(".container").attr("transform", "translate(" + x/2 + "," + y/2 + ")");

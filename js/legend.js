@@ -31,7 +31,7 @@ function createLegend() {
 				return 'translate(' + horz + ',' + vert + ')';        
 			  })
 			  .text("Stellar class of the star around which the planet orbits")
-			  .call(wrap, 200);
+			  .call(wrap, 220);
 			  
 		//Create container per circle/text pair  
 		var legend = legendContainer
